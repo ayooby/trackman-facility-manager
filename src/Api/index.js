@@ -1,23 +1,14 @@
-const getFacilityListFromStorage = () => {
-  return window.localStorage.getItem("facilityList") || [];
-};
+import { getDataFromLocalStorage, makePromise } from "./utils";
 
-const saveFacilityToLocalStorage = (newFacility) => {
-  const oldFacilities = getFacilityListFromStorage();
-  window.localStorage.setItem("facilityList", [newFacility, ...oldFacilities]);
-};
+const FACILITY_KEY = "facilityList";
 
-export const getFacilityList = () =>
-  new Promise((resolve) =>
-    setTimeout(() => resolve(getFacilityListFromStorage()), 1000)
-  );
+export const getFacilityList = () => {
+  const facilityList = getDataFromLocalStorage(FACILITY_KEY) || [];
+  return makePromise(facilityList);
+};
 
 export const getFacilityById = ({ id }) => {
-  const savedFacilities = getFacilityListFromStorage();
+  const savedFacilities = getDataFromLocalStorage(FACILITY_KEY);
   const facility = savedFacilities.find((item) => item.id === id);
-  return new Promise((resolve, reject) =>
-    setTimeout(() => {
-      facility ? resolve(facility) : reject("Facility not found");
-    }, 1000)
-  );
+  return makePromise(facility);
 };

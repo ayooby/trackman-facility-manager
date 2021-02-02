@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Grid, Button, Container, CircularProgress } from "@material-ui/core";
+import { Grid, Button, Container } from "@material-ui/core";
 
 import { FacilityList } from "./FacilityList";
 import { Loading } from "./Loading";
