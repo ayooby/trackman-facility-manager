@@ -1,6 +1,10 @@
 export const saveToLocalStorage = (key, data) => {
   const stringifiedData = JSON.stringify(data);
-  window.localStorage(key, stringifiedData);
+  try {
+    window.localStorage.setItem(key, stringifiedData);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const getDataFromLocalStorage = (key) => {
