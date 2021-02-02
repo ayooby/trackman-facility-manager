@@ -1,7 +1,7 @@
 import Grid from "@material-ui/core/Grid";
-import FacilityItem from "./FacilityItem";
+import { FacilityItem } from "./FacilityItem";
 
-const FacilityList = ({ facilities }) => {
+export const FacilityList = ({ facilities }) => {
   return (
     <Grid container justify="center">
       {facilities.map((facility) => (
@@ -10,5 +10,3 @@ const FacilityList = ({ facilities }) => {
     </Grid>
   );
 };
-
-export default FacilityList;

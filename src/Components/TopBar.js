@@ -1,8 +1,6 @@
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
-const TopBar = () => {
+export const TopBar = () => {
   return (
     <AppBar position="relative">
       <Toolbar>
@@ -13,5 +11,3 @@ const TopBar = () => {
     </AppBar>
   );
 };
-
-export default TopBar;

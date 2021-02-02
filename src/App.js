@@ -1,10 +1,9 @@
-import Container from "@material-ui/core/Container";
+import { Container } from "@material-ui/core";
 
-import TopBar from "./Components/TopBar";
-import FacilityPage from "./Components/FacilityPage";
+import { TopBar } from "./Components/TopBar";
+import { FacilityPage } from "./Components/FacilityPage";
 
-
-function App() {
+export function App() {
   return (
     <>
       <TopBar />
@@ -16,5 +15,3 @@ function App() {
     </>
   );
 }
-
-export default App;
